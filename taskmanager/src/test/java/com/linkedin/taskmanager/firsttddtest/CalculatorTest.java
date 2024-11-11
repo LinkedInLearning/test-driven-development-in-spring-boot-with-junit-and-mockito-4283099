@@ -13,6 +13,18 @@ public class CalculatorTest {
 
         // assert
         assertEquals(3.0, result);
+    }
 
+    @Test
+    void testDivideByZero() {
+        Calculator calculator = new Calculator();
+        assertThrows(ArithmeticException.class, () -> calculator.divide(5, 0));
+    }
+
+    @Test
+    void testDivideNegativeNumbers() {
+        Calculator calculator = new Calculator();
+        double result = calculator.divide(-6, -2);
+        assertEquals(3.0, result);
     }
 }

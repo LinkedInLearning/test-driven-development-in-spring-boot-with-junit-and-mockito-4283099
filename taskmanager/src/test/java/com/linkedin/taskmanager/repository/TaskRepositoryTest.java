@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 public class TaskRepositoryTest {
+    @Autowired
     private TaskRepository taskRepository;
     @Test
     void testSaveTask() {

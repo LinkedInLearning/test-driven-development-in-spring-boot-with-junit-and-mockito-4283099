@@ -18,9 +18,7 @@ public class TaskRepositoryTest {
     @Test
     void testSaveTask() {
         // arrange
-        Task task = new Task();
-        task.setTitle("Test task");
-        task.setStatus("To do");
+        Task task = new Task("Test task", "To do");
 
         // act
         Task savedTask = taskRepository.save(task);
@@ -33,9 +31,7 @@ public class TaskRepositoryTest {
     @Test
     void testDeleteTask() {
         // arrange
-        Task task = new Task();
-        task.setTitle("Task to delete");
-        task.setStatus("Done");
+        Task task = new Task("Task to delete", "Done");
         taskRepository.save(task);
 
         // act

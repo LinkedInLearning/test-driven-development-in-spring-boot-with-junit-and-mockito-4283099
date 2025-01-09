@@ -9,22 +9,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 public class TaskRepositoryTest {
-
     @Autowired
-    TaskRepository taskRepository;
-
+    private TaskRepository taskRepository;
     @Test
     void testSaveTask() {
         // arrange
         Task task = new Task();
-        task.setTitle("Test task");
-        task.setStatus("To do");
+
+        task.setTitle("Test Task");
+        task.setDescription("This is test task");
 
         // act
         Task savedTask = taskRepository.save(task);
 
         // assert
-        assertNotNull(savedTask);
-        assertEquals("Test task", savedTask.getTitle());
+
+        assertNotNull(savedTask.getId());
+        assertEquals("Test Task", savedTask.getTitle());
     }
 }
